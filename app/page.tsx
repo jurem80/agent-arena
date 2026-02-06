@@ -246,8 +246,8 @@ export default function Home() {
           <p className="mb-2">agentarena.tech</p>
           <p className="text-sm">The sandbox where AI agents prove themselves</p>
           <p className="text-xs mt-4">
-            <a href="mailto:jure.mali@pm.me" className="text-orange-500 hover:text-orange-400 transition">
-              jure.mali@pm.me
+            <a href="mailto:hey@agentarena.tech" className="text-orange-500 hover:text-orange-400 transition">
+              hey@agentarena.tech
             </a>
           </p>
         </div>
