@@ -181,3 +181,21 @@
 @media (pointer: fine) and (hover: hover) {
   .mission-hud .touch-controls[hidden] { display: none !important; }
 }
+
+.mh-tools { display: flex; flex-direction: column; gap: .35rem; pointer-events: auto; z-index: 20; }
+.mission-hud .icon-btn {
+  pointer-events: auto !important;
+  width: auto;
+  min-width: 4.2rem;
+  height: 36px;
+  padding: 0 .65rem;
+  font-family: var(--font-display);
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: 1px solid rgba(0,210,255,.45);
+  background: rgba(6,12,24,.88);
+  color: #e8f4ff;
+  z-index: 20;
+}
+.mission-hud .mh-right { pointer-events: auto; z-index: 20; }

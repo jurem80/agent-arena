@@ -177,6 +177,17 @@ export class FlyerApp {
     );
     this.mission.bindHud(hud);
 
+    this._onEsc = (e) => {
+      if (e.code !== 'Escape' && e.key !== 'Escape') return;
+      e.preventDefault();
+      e.stopPropagation();
+      if ($('#end-screen') && !$('#end-screen').hidden) return;
+      if ($('#map-screen') && !$('#map-screen').hidden) return;
+      const pausing = $('#pause-screen').hidden;
+      this.#setPause(pausing);
+    };
+    window.addEventListener('keydown', this._onEsc, true);
+
     $('#btn-pause').onclick = () => this.#setPause(true);
     $('#btn-mute-mission').onclick = () => {
       const a = getAudio();
@@ -198,9 +209,6 @@ export class FlyerApp {
   }
 
   #onMissionHud(state) {
-    if (state.pauseRequest) {
-      $('#pause-screen').hidden = false;
-    }
     $('#hud-hull-val').textContent = String(state.hull);
     $('#hud-hull-fill').style.width = `${(state.hull / state.maxHull) * 100}%`;
     $('#hud-campus-label').textContent = `${state.regionName} campus`;
@@ -263,6 +271,10 @@ export class FlyerApp {
   }
 
   #teardownMission() {
+    if (this._onEsc) {
+      window.removeEventListener('keydown', this._onEsc, true);
+      this._onEsc = null;
+    }
     this.mission?.dispose?.();
     this.mission = null;
   }

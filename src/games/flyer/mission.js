@@ -81,10 +81,10 @@ export class MissionGame {
     this.plane = new THREE.Group();
     this.scene.add(this.plane);
     this.yaw = 0;
-    this.pitch = 0.05;
+    this.pitch = -0.08;
     this.bank = 0;
     this.speed = opts.plane.speed;
-    this.plane.position.set(0, 28, 55);
+    this.plane.position.set(0, 22, 48);
 
     this.#buildEnvironment();
     this.#bindResize();
@@ -273,16 +273,6 @@ export class MissionGame {
   };
 
   #updateFlight(dt) {
-    if (this.input.pause) {
-      if (!this.pauseLatch) {
-        this.pauseLatch = true;
-        this.setPaused(true);
-        this.onHud?.({ ...this.#hudState(), pauseRequest: true });
-      }
-    } else {
-      this.pauseLatch = false;
-    }
-
     const targetPitch = this.input.pitch * 0.55;
     const targetBank = this.input.bank * 0.85;
     this.pitch = damp(this.pitch, targetPitch, 6, dt);

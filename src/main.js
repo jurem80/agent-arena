@@ -119,8 +119,10 @@ app.innerHTML = `
             <div id="radar-dots"></div>
             <span id="radar-player" class="radar-player"></span>
           </div>
-          <button type="button" id="btn-pause" class="icon-btn" aria-label="Pause">❚❚</button>
-          <button type="button" id="btn-mute-mission" class="icon-btn" aria-label="Mute">♪</button>
+          <div class="mh-tools">
+            <button type="button" id="btn-pause" class="icon-btn" aria-label="Pause">Pause</button>
+            <button type="button" id="btn-mute-mission" class="icon-btn" aria-label="Mute">Mute</button>
+          </div>
         </div>
       </div>
       <div id="wave-announce" class="wave-announce" hidden>

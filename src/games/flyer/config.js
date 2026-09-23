@@ -71,6 +71,7 @@ export const REGIONS = [
     threat: 1,
     unlocksAfter: null,
     tip: 'Raider drones only. Good place to learn the controls.',
+    // threat dashes: 1 of 5 for tutorial campus
     datacenterPaths: ['/models/datacenter.glb'],
     watchtowerPaths: ['/models/watchtower.glb'],
     raidersPerWave: [7, 9, 11],
