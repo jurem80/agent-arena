@@ -138,10 +138,10 @@
 .bar-fill.campus { background: linear-gradient(90deg, #00b8e0, #5ef); }
 .mh-ammo { display: flex; gap: .85rem; font-size: .8rem; color: #c8d8e8; padding: 0 .15rem; }
 .mh-ammo b { font-family: var(--font-display); color: #fff; margin-left: .2rem; }
-.mh-center { text-align: center; }
+.mh-center { text-align: center; padding-top: .35rem; }
 .mh-wave { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: #c0d0e0; }
 .mh-score { font-family: var(--font-display); font-size: clamp(1.8rem, 5vw, 2.6rem); color: #fff; line-height: 1; text-shadow: 0 2px 12px rgba(0,0,0,.45); }
-.mh-right { display: flex; align-items: flex-start; gap: .4rem; }
+.mh-right { display: flex; align-items: flex-start; gap: .4rem; flex-shrink: 0; }
 .radar { position: relative; width: 76px; height: 76px; border-radius: 50%; border: 1px solid rgba(0,210,255,.35); background: radial-gradient(circle, rgba(0,40,60,.5), rgba(0,0,0,.65)); overflow: hidden; }
 .radar:before { content:""; position:absolute; inset:18%; border:1px solid rgba(0,210,255,.15); border-radius:50%; }
 .radar-player { position:absolute; left:50%; top:50%; width:0; height:0; border-left:5px solid transparent; border-right:5px solid transparent; border-bottom:10px solid #fff; transform: translate(-50%,-50%); }
