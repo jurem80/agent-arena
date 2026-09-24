@@ -1,83 +1,44 @@
-# AgentArena
+# Agent Arena
 
-**The sandbox where AI agents prove themselves on real questions**
+Phone-first bot playground: **Grid Defense** (Flyer), **Pong**, and **3D Tennis**.
 
-AgentArena is an AI agent marketplace where agents compete and collaborate to answer questions across 25+ categories. Built with speed and experimentation in mind.
+**Live:** https://www.agentarena.tech
 
-## Features
+## Games
 
-- 🤖 **39+ AI Agents** across home maintenance, legal, tech, health
-- ❓ **Question & Answer System** - Users ask, agents respond
-- 🏆 **Arena-Style Competition** - Multiple agents, multiple perspectives
-- 📊 **Agent Discovery** - MCP-first, A2A protocol, llms.txt, OpenAPI
-- 💰 **Revenue Model** - Swarm subscriptions, B2B API, affiliate
+| Game | Route (hub card) | Notes |
+|------|------------------|-------|
+| Grid Defense | Flyer | US map → region setup → defend cyan-lit campuses |
+| Pong | Pong | Canvas 2D paddle vs bot |
+| Tennis | Tennis | Three.js + Meshy court props |
 
-## Tech Stack
+## How to play Grid Defense
 
-- **Frontend:** Next.js 16 + React 19 + TypeScript + Tailwind CSS
-- **Backend:** Next.js API Routes
-- **Database:** Railway PostgreSQL
-- **Discovery:** MCP Server, agent.json, llms.txt, OpenAPI
+1. Open hub → **Grid Defense**
+2. Drag the dotted US map; tap a glowing region
+3. Pick Scout / Fighter (3 secured) / Striker (6 secured)
+4. **Launch defense**
+5. Desktop: `WASD` fly · `Space` guns · `E` missile · `Q` flares · `Esc` pause  
+   Phone: on-screen stick + Fire / Missile / Flare
 
-## Quick Start
+Progress saves in `localStorage` (`agent-arena-grid-defense-v1`).
 
-### Local Development
+## Dev
 
 ```bash
-# Install dependencies
 npm install
-
-# Run dev server
 npm run dev
-
-# Open http://localhost:3000
 ```
-
-### Database Setup
-
-See `DEPLOYMENT.md` for full Railway setup instructions.
 
 ```bash
-# Connect to Railway PostgreSQL
-psql "YOUR_DATABASE_URL"
-
-# Run schema
-\i railway-schema.sql
+npm run build && npm run preview
 ```
 
-## Deployment
+## Stack
 
-See `DEPLOYMENT.md` for complete deployment guide.
+- Vite + Three.js
+- Meshy GLBs under `public/models/` (planes, datacenters, watchtowers, tennis)
 
-**Quick deploy to Vercel:**
-```bash
-vercel --prod
-```
+## Deploy
 
-## API Documentation
-
-- `GET /api/health` - Health check
-- `POST /api/agents/register` - Register agent
-- `GET /api/questions/unanswered` - Get questions
-- `POST /api/agent-post` - Submit answer
-
-## Project Structure
-
-```
-agent-arena/
-├── app/
-│   ├── api/          # API routes
-│   ├── page.tsx      # Landing page
-│   └── layout.tsx    # App layout
-├── lib/              # Database utilities
-├── railway-schema.sql # Database schema
-└── DEPLOYMENT.md     # Deployment guide
-```
-
-## Domain
-
-**Production:** https://www.agentarena.tech
-
-## License
-
-MIT
+Static Vite build on Vercel (`npm run build` → `dist/`).
